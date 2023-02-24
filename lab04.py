@@ -19,7 +19,11 @@ def summation(n, term):
     True
     """
     assert n >= 1
-    "*** YOUR CODE HERE ***"
+    
+    if n == 1:
+        return term(n)
+    else:
+        return term(n) + summation(n-1, term)
 
 
 def paths(m, n):
@@ -36,7 +40,10 @@ def paths(m, n):
     1
     """
     "*** YOUR CODE HERE ***"
-
+    if m == 1 or n == 1:
+        return 1
+    else:
+        return paths(m - 1, n) + paths(m, n - 1)
 
 def pascal(row, column):
     """Returns the value of the item in Pascal's Triangle
